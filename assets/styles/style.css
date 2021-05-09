@@ -1,0 +1,259 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #0b3468 linear-gradient(to bottom, #002244, #4C516D);
+    height: 100vh;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: #e8e5ea;
+}
+
+.pink-lightcyan {
+    color: lightcyan;
+}
+
+h1 {
+    margin: 0;
+    font-size: 50px;
+    font-weight: lighter;
+    color: transparent;
+    -webkit-text-stroke: 1px #008080;
+}
+
+.subject {
+    margin-bottom: 40px;
+    font-size: 50px;
+    font-weight: lighter;
+    color: transparent;
+    -webkit-text-stroke: 1px cyan;
+}
+
+p {
+    margin: 0 0 20px;
+    font-size: 60px;
+}
+
+.authors {
+    font-family: 'Montserrat', sans-serif;
+    font-size: medium;
+}
+
+.title-row {
+    font-size: 20px;
+    margin-left: 10%;
+    margin-top: 20px;
+}
+
+.description-row {
+    display: flex;
+    text-align: start;
+    padding-left: 200px;
+    padding-right: 30px;
+    padding-top: 13px;
+}
+
+.accordion {
+    font-size: 20px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+.active, .accordion:hover {
+    box-shadow: 0 0 3px cyan;
+    transition-delay: 0.5s;
+}
+
+.accordion span {
+    position: absolute;
+}
+
+.accordion span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, cyan);
+}
+
+.accordion:hover span:nth-child(1) {
+    left: 100%;
+    transition: 1s;
+}
+
+.accordion span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, cyan);
+}
+
+.accordion:hover span:nth-child(2) {
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+}
+
+.accordion span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, cyan);
+}
+
+.accordion:hover span:nth-child(3) {
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+
+.accordion span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, cyan);
+}
+
+.accordion:hover span:nth-child(4) {
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
+}
+
+.panel {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.form {
+    font-family: 'Montserrat', sans-serif;
+    font-size: medium;
+    color: antiquewhite;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    border-radius: 20px;
+    margin: auto;
+    width: 60%;
+    height: 820px;
+}
+
+.row {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    width: 900px;
+    height: auto;
+}
+
+input {
+    text-align: start;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: medium;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid black;
+    border-radius: 4px;
+    width: 50px;
+    margin: 3px;
+}
+
+input::placeholder {
+    color: #e8e5ea;
+}
+
+button {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: medium;
+    background-color: transparent;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    color: white;
+    width: 40%;
+}
+
+.matrix-table {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.matrix-button {
+    font-size: 30px;
+    background-color: rgba(25, 187, 190, 0.66);
+}
+
+.matrix-button-wrapper {
+    padding-left: 60px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.matrix-button[disabled] {
+    cursor: not-allowed;
+}
+
+.matrix-row {
+    display: flex;
+    position: relative;
+    z-index: 9;
+}
+
+
+.matrix-inputs {
+    position: relative;
+}
+
+.matrix-inputs::before,.matrix-inputs::after {
+    position: absolute;
+    top: 0;
+    content: '';
+    height: 100%;
+    width: 30px;
+    border-radius: 50px;
+    border: 0 solid white;
+    z-index: 1;
+}
+
+.matrix-inputs::before {
+    left: -15px;
+    border-left-width: 2px;
+}
+
+.matrix-inputs::after {
+    right: -15px;
+    border-right-width: 2px;
+}
+
+.matrix-area {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.matrix-area p {
+    font-size: 30px;
+    margin: 0;
+    margin-right: 20px;
+}

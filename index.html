@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/assets/styles/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="/assets/scripts/frontend.js" defer></script>
+    <script src="/assets/scripts/app.js" defer></script>
+    <title>Projekt</title>
+</head>
+<body>
+<h1>
+    Informatyka, semestr IV
+</h1>
+<p class="authors">
+    <span class="pink-lightcyan">Gabriela Stefaniak i Dominik Glegoła</span>
+</p>
+<p class="subject">
+    Grafy i Sieci
+</p>
+<div class="form">
+    <div class="introdutcion">
+        <button class="accordion">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Jakie było nasze zadanie?
+        </button>
+        <div class="panel">
+            <div class="description-row">
+                Korzystając z macierzy sąsiedztwa wierzchołków opracować i zaimplementować algorytm obliczania
+                odległości
+                pomiędzy dowolnymi wierzchołkami w grafie spójnym skierowanym.
+            </div>
+        </div>
+        <button class="accordion">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Jakich algorytmów używa program?
+        </button>
+        <div class="panel">
+            <div class="description-row">
+                Korzystając z macierzy sąsiedztwa wierzchołków opracować i zaimplementować algorytm obliczania
+                odległości
+                pomiędzy dowolnymi wierzchołkami w grafie spójnym skierowanym.
+            </div>
+        </div>
+        <button class="accordion">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Co w programie jest dozwolone?
+        </button>
+        <div class="panel">
+            <div class="description-row">
+                Korzystając z macierzy sąsiedztwa wierzchołków opracować i zaimplementować algorytm obliczania
+                odległości
+                pomiędzy dowolnymi wierzchołkami w grafie spójnym skierowanym.
+            </div>
+        </div>
+        <button class="accordion">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Co w programie jest zabronione?
+        </button>
+        <div class="panel">
+            <div class="description-row">
+                Korzystając z macierzy sąsiedztwa wierzchołków opracować i zaimplementować algorytm obliczania
+                odległości
+                pomiędzy dowolnymi wierzchołkami w grafie spójnym skierowanym.
+            </div>
+        </div>
+    </div>
+    <div class = "matrix-table" id="matrix-table">
+        <div class = "matrix-area">
+            <p>A=</p>
+            <div class="matrix-inputs">
+                <div class = "matrix-row" v-for="(row,i) in matrix">
+                    <div v-for="(column, j) in row">
+                        <input type="number" :placeholder="i+'x'+j" v-model="matrix[i][j]">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class = "matrix-button-wrapper">
+            <button class="matrix-button" v-on:click="add" :disabled="isMax">+</button>
+            <button class="matrix-button" v-on:click="del" :disabled="isMin">-</button>
+        </div>
+        <div class = "matrix-answer">
+            Odległość od
+            <select v-model="fromNode">
+                <option disabled value="">Please select one</option>
+                <option v-for="n in nodesCount">{{n-1}}</option>
+            </select>
+            do
+            <select v-model="toNode">
+                <option disabled value="">Please select one</option>
+                <option v-for="n in nodesCount">{{n-1}}</option>
+            </select>
+            wynosi: {{ calculatedMatrix[fromNode][toNode] }}
+        </div>
+    </div>
+</div>
+</body>
+</html>
